@@ -1,0 +1,17 @@
+vc_landmarks = {
+    'Badshahi Mosque': set(['Azadi Chowk']),
+    'Lahore Fort': set(['Azadi Chowk']),
+    'Minar-e-Pakistan': set(['Azadi Chowk']),
+    'Liberty Market': set(['Kalma Chowk']),
+    'Gaddafi Stadium': set(['Kalma Chowk']),
+    'Shalimar Gardens': set(['Bhatti Chowk']),
+    'Anarkali Bazaar': set(['Qurtaba Chowk']),
+    'Lahore Museum': set(['M.A.O College']),
+    'Data Darbar': set(['Bhatti Chowk']),
+    'Mall Road': set(['M.A.O College']),
+    'Punjab University': set(['Qurtaba Chowk']),
+    'Model Town Park': set(['Model Town']),
+    'Ichra Bazaar': set(['Ichra']),
+    'Youhanabad Church': set(['Youhanabad Chowk']),
+    'Wapda Town': set(['Gajjumata']),
+}
