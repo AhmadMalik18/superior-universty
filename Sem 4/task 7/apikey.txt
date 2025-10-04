@@ -1,0 +1,4 @@
+from flask import flask
+
+
+api key = "Ob2JBkQkBl4UKoML73KPHwgTR1XnmgZtefSZQfnX"

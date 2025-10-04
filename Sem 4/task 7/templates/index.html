@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mars Weather Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mars Weather Dashboard</h1>
+        <p class="date">Latest Data from NASA InSight</p>
+    </header>
+
+    <main>
+        <section class="weather-container">
+            {% for sol, details in weather_data.items() %}
+            <div class="weather-card">
+                <div class="sol-title">Sol {{ sol }}</div>
+                <div class="weather-details">
+                    <strong>Season:</strong> {{ details['Season'] }}<br>
+                    <strong>Min Temp:</strong> {{ details['AT']['mn'] if details['AT'] else 'N/A' }} °C<br>
+                    <strong>Max Temp:</strong> {{ details['AT']['mx'] if details['AT'] else 'N/A' }} °C<br>
+                    <strong>Pressure:</strong> {{ details['PRE']['av'] if details['PRE'] else 'N/A' }} Pa<br>
+                    <strong>Wind Speed:</strong> {{ details['HWS']['av'] if details['HWS'] else 'N/A' }} m/s<br>
+                    <strong>Sunrise:</strong> {{ details['First_UTC'] }}<br>
+                    <strong>Sunset:</strong> {{ details['Last_UTC'] }}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <p>Powered by NASA InSight Mars Weather Service API 🚀</p>
+    </footer>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

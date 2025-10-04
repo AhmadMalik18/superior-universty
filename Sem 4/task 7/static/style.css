@@ -1,0 +1,133 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0d0d2b, #1b1b3a);
+    color: #f5f5f5;
+    line-height: 1.6;
+    padding: 10px;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+header h1 {
+    font-size: 2rem;
+    color: #ffcc00;
+}
+header .date {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+/* Main Image */
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.8);
+    transition: transform 0.3s ease;
+}
+.image-container img:hover {
+    transform: scale(1.03);
+}
+
+/* Info Section */
+.info {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+.info .explanation {
+    margin-bottom: 10px;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+.info .credit {
+    text-align: right;
+    font-style: italic;
+    color: #ccc;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .info {
+        font-size: 0.95rem;
+    }
+}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+    .info {
+        font-size: 0.9rem;
+    }
+}
+.weather-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            justify-content: center;
+            margin: 30px auto;
+            max-width: 1200px;
+        }
+        .weather-card {
+            background: rgba(255,255,255,0.07);
+            border-radius: 14px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.5);
+            padding: 24px;
+            min-width: 260px;
+            max-width: 320px;
+            color: #fff;
+            transition: transform 0.2s;
+        }
+        .weather-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(255,255,255,0.15);
+        }
+        .sol-title {
+            font-size: 1.3rem;
+            color: #ffcc00;
+            margin-bottom: 10px;
+        }
+        .weather-details {
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        @media (max-width: 768px) {
+            .weather-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
