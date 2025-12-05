@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Joke Generator</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <h2 class="title">😂 Random Joke Generator</h2>
+
+    <div class="card">
+        <p id="setup" class="joke-text">Click the button below to generate a joke!</p>
+        <p id="punchline" class="punchline"></p>
+    </div>
+
+    <button id="btn" class="btn">Generate Joke</button>
+</div>
+
+<script>
+    document.getElementById("btn").addEventListener("click", async () => {
+        let res = await fetch("/get-joke");
+        let data = await res.json();
+
+        document.getElementById("setup").textContent = data.setup;
+        document.getElementById("punchline").textContent = "👉 " + data.punchline;
+    });
+</script>
+
+</body>
+</html>
