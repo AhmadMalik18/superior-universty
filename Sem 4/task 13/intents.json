@@ -1,0 +1,78 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hello", "hi", "salam", "hey", "assalam o alaikum"],
+      "responses": [
+        "Hello! How can I help with your travel plans today?",
+        "Hi — ready to plan your next trip!"
+      ]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": ["how are you", "how's it going", "what's up"],
+      "responses": [
+        "I'm good, what about you?",
+        "Doing well! How are you?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you", "khuda hafiz"],
+      "responses": [
+        "Goodbye! Safe travels!",
+        "See you — let me know when you want to plan again."
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "shukria"],
+      "responses": [
+        "You're welcome!",
+        "Happy to help — have a great trip!"
+      ]
+    },
+    {
+      "tag": "study_visa",
+      "patterns": ["study visa", "i want study visa", "need study visa", "mujhe study visa chahiye", "study visa details"],
+      "responses": [
+        "Sure! Please tell your budget like 5M, 10M, or 20M."
+      ]
+    },
+    {
+      "tag": "visit_visa",
+      "patterns": ["visit visa", "visa for visit", "i want visit visa", "need visit visa", "mujhe visit visa chahiye", "visit visa details"],
+      "responses": [
+        "We offer Visit Visas for: Baku, Malaysia, Dubai, Saudi Arabia, Thailand, Maldives, Turkey, Italy. How many days do you want to stay?"
+      ]
+    },
+    {
+      "tag": "umrah",
+      "patterns": ["umrah", "umrah package"],
+      "responses": [
+        "We offer Umrah packages of 8, 15, 21, and 28 days. How many days would you like to travel?"
+      ]
+    },
+    {
+      "tag": "hotel",
+      "patterns": ["hotel", "stay", "book hotel"],
+      "responses": [
+        "Which city and how many days will you stay? And which hotel category do you prefer?"
+      ]
+    },
+    {
+      "tag": "flight_ticket",
+      "patterns": ["ticket", "book ticket", "flight", "air ticket"],
+      "responses": [
+        "Which country ticket do you want? Options: Dubai, Turkey, Baku, Malaysia, Saudi Arabia, Germany, France, Italy, UK, USA, Canada, Japan."
+      ]
+    },
+    {
+      "tag": "tour_packages",
+      "patterns": ["package", "tour", "holiday package"],
+      "responses": [
+        "We offer tour packages for Dubai, Turkey, Baku, Malaysia, and more. What is your budget?"
+      ]
+    }
+  ]
+}

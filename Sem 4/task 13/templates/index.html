@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Chat Assistant</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #87ceeb, #b0e0e6); /* Sky blue gradient */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Chat Container */
+        .container {
+            width: 450px;
+            max-width: 90%;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0d6efd;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        /* Chat Box */
+        #chatbox {
+            flex: 1;
+            height: 350px;
+            overflow-y: auto;
+            border: 1px solid #b0c4de;
+            padding: 10px;
+            border-radius: 10px;
+            background: #e0f7fa;
+            margin-bottom: 15px;
+        }
+
+        .msg {
+            margin: 8px 0;
+            padding: 10px 14px;
+            border-radius: 20px;
+            max-width: 75%;
+            word-wrap: break-word;
+        }
+
+        .user {
+            background: #0d6efd;
+            color: white;
+            margin-left: auto;
+            text-align: right;
+        }
+
+        .bot {
+            background: #87ceeb;
+            color: black;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        /* Input Section */
+        .input-area {
+            display: flex;
+            gap: 10px;
+        }
+
+        #inputBox {
+            flex: 1;
+            padding: 10px;
+            border-radius: 20px;
+            border: 1px solid #b0c4de;
+            outline: none;
+        }
+
+        #sendBtn {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background: #0d6efd;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        #sendBtn:hover {
+            background: #0b5ed7;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Travel Chat Assistant</h1>
+    <div id="chatbox"></div>
+
+    <div class="input-area">
+        <input id="inputBox" placeholder="Ask anything about travel..." />
+        <button id="sendBtn" onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    function sendMessage() {
+        let msg = document.getElementById("inputBox").value.trim();
+        if (!msg) return;
+
+        let chat = document.getElementById("chatbox");
+        chat.innerHTML += `<div class='msg user'>${msg}</div>`;
+        chat.scrollTop = chat.scrollHeight;
+
+        // Correct fetch call: key must match backend ("message")
+        fetch("/chat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ message: msg })  // <-- key is "message"
+        })
+        .then(res => res.json())
+        .then(data => {
+            chat.innerHTML += `<div class='msg bot'>${data.response}</div>`;
+            chat.scrollTop = chat.scrollHeight;
+        })
+        .catch(err => console.error("Error:", err));
+
+        document.getElementById("inputBox").value = "";
+    }
+
+    // Send message on Enter key
+    document.getElementById("inputBox").addEventListener("keypress", function(e) {
+        if (e.key === "Enter") sendMessage();
+    });
+</script>
+
+</body>
+</html>
